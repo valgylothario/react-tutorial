@@ -1,4 +1,8 @@
-const MealList = ({ meals }) => {
+import { useMealsContext } from "./MealsProvider";
+
+const MealList = () => {
+  const { meals } = useMealsContext();
+
   const titleCss = {
     textAlign: "center",
   };

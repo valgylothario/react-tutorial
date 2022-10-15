@@ -1,18 +1,16 @@
 import React from "react";
 import "./App.css";
+import Counter from "./Counter";
 import MealList from "./MealList";
+import MealsProvider from "./MealsProvider";
 
 function App() {
-  const [meals, setMeals] = React.useState([
-    "Backed Beans",
-    "Backed Sweet Potatoes",
-    "Green Sald",
-    "Pizza",
-  ]);
-
   return (
     <React.Fragment>
-      <MealList meals={meals}></MealList>
+      <MealsProvider>
+        <MealList />
+        <Counter />
+      </MealsProvider>
     </React.Fragment>
   );
 }
