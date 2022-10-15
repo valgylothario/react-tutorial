@@ -2,9 +2,14 @@ import React from "react";
 import "./App.css";
 import MealList from "./MealList";
 
-const meals = ["Backed Beans", "Backed Sweet Potatoes", "Green Sald", "Pizza"];
-
 function App() {
+  const [meals, setMeals] = React.useState([
+    "Backed Beans",
+    "Backed Sweet Potatoes",
+    "Green Sald",
+    "Pizza",
+  ]);
+
   return (
     <React.Fragment>
       <MealList meals={meals}></MealList>
