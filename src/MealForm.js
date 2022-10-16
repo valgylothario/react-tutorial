@@ -3,7 +3,7 @@ import { useMealsContext } from "./MealsProvider";
 
 const MealsForm = () => {
   const [meal, setMeal] = useState("");
-  const { dispatch } = useMealsContext();
+  const { addMeal } = useMealsContext();
 
   const handleChange = (event) => {
     setMeal(event.target.value);
@@ -48,10 +48,7 @@ const MealsForm = () => {
           autoComplete="off"
           placeholder="Ex: Apple Sald"
         />
-        <button
-          onClick={() => dispatch({ type: "Add", payload: meal })}
-          style={buttonStyle}
-        >
+        <button onClick={() => addMeal(meal)} style={buttonStyle}>
           Add
         </button>
       </form>
