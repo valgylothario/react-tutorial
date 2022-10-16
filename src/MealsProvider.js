@@ -12,9 +12,13 @@ const MealsProvider = ({ children }) => {
     "Pizza",
   ]);
 
+  const AddMeals = (newMeal) => setMeals([...meals, newMeal]);
+
   //return provider value with the children.
   return (
-    <MealContext.Provider value={{ meals }}>{children}</MealContext.Provider>
+    <MealContext.Provider value={{ meals, AddMeals }}>
+      {children}
+    </MealContext.Provider>
   );
 };
 export const useMealsContext = () => React.useContext(MealContext);
