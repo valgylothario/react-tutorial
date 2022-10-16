@@ -3,11 +3,10 @@ import { useMealsContext } from "./MealsProvider";
 
 const MealsForm = () => {
   const [meal, setMeal] = useState("");
-  const { AddMeals } = useMealsContext();
+  const { dispatch } = useMealsContext();
 
   const handleChange = (event) => {
     setMeal(event.target.value);
-    console.log("value is:", event.target.value);
   };
 
   const inputStyle = {
@@ -49,7 +48,10 @@ const MealsForm = () => {
           autoComplete="off"
           placeholder="Ex: Apple Sald"
         />
-        <button onClick={() => AddMeals(meal)} style={buttonStyle}>
+        <button
+          onClick={() => dispatch({ type: "Add", payload: meal })}
+          style={buttonStyle}
+        >
           Add
         </button>
       </form>

@@ -1,7 +1,7 @@
 import { useMealsContext } from "./MealsProvider";
 
 const MealList = () => {
-  const { meals } = useMealsContext();
+  const { state, dispatch } = useMealsContext();
 
   const titleCss = {
     textAlign: "center",
@@ -20,8 +20,11 @@ const MealList = () => {
   return (
     <div>
       <h1 style={titleCss}>Meal List</h1>
-      {meals.map((meal, index) => (
+      {state.map((meal, index) => (
         <h2 key={index} style={mealElement}>
+          <button onClick={() => dispatch({ type: "Delete", payload: meal })}>
+            X
+          </button>
           {meal}
         </h2>
       ))}

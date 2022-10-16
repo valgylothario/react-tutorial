@@ -1,7 +1,7 @@
 import { useMealsContext } from "./MealsProvider";
 
 const Counter = () => {
-  const { meals } = useMealsContext();
+  const { state } = useMealsContext();
 
   const counterStyle = {
     fontSize: "bold",
@@ -9,7 +9,7 @@ const Counter = () => {
     textAlign: "center",
     margin: "auto",
   };
-  return <h3 style={counterStyle}> Number of meals: {meals.length}</h3>;
+  return <h3 style={counterStyle}> Number of meals: {state.length}</h3>;
 };
 
 export default Counter;
